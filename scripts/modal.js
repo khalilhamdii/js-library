@@ -1,3 +1,5 @@
+/* eslint-disable (error typpe) */
+
 const modal = document.querySelector('#myModal');
 const renderForm = () => {
   modal.style.display = 'block';
