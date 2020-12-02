@@ -33,19 +33,31 @@ let checkBook = (status) => {
   return status ? "Already read" : "Not read yet";
 };
 
+// let setIndexData = (index) => {
+//   const arr = document
+//     .querySelector(`[data-index="${index}"]`)
+//     .querySelectorAll(".index-class");
+//   for (let i of arr) {
+//     i.setAttribute("data-book", index);
+//   }
+// };
+
 function showBooks() {
   for (let i = 0; i < localStorage.length; i++) {
     var key = localStorage.key(i);
     var value = JSON.parse(localStorage[key]);
-    addBook(value);
+    let index = key.valueOf().replace(/\D/g, "");
+    addBook(value, index);
   }
 }
 
-function addBook(obj) {
+function addBook(obj, index) {
   const container = document.querySelector(".container");
   container.innerHTML +=
     `
-    <div class="card">
+    <div class="card" data-index="` +
+    index +
+    `">
 
     <div class="card-body">
       <h4 class="card-title"><a>` +
@@ -60,10 +72,19 @@ function addBook(obj) {
       <p class="card-text">` +
     checkBook(obj.status) +
     `</p>
+    <a onclick= deleteBook(this.getAttribute("data-book")) data-book="` +
+    index +
+    `" class="btn btn-danger">Delete Book</a>
     </div>
   
   </div>
     `;
 }
+
+let deleteBook = (index) => {
+  localStorage.removeItem(`Book-${index}`);
+  let book = document.querySelector(`[data-index="${index}"]`);
+  book.remove();
+};
 
 showBooks();
