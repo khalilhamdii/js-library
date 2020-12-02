@@ -1,4 +1,4 @@
-/* eslint-disable (error typpe) */
+/* eslint-disable (error type) */
 
 function Book(title, author, pages, status) {
   this.title = title;

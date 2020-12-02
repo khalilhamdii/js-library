@@ -1,4 +1,4 @@
-/* eslint-disable (error typpe) */
+/* eslint-disable (error type) */
 
 const modal = document.querySelector('#myModal');
 const renderForm = () => {
