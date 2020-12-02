@@ -52,21 +52,21 @@ function showBooks() {
 }
 
 function addBook(obj, index) {
-  const container = document.querySelector(".container");
+  const container = document.querySelector(".container-fluid");
   container.innerHTML +=
     `
-    <div class="card" data-index="` +
+    <div class="card col-3 mx-1" data-index="` +
     index +
     `">
 
     <div class="card-body">
-      <h4 class="card-title"><a>` +
+      <h4 class="card-title text-center">TITLE: ` +
     obj.title +
-    `</a></h4>
-      <h6 card="card-author">` +
+    `</h4>
+      <h6 card="card-author">Author: ` +
     obj.author +
     `</h6>
-      <p class="card-text">` +
+      <p class="card-text">Pages: ` +
     obj.pages +
     `</p>
       <a onclick=toggleRead(this.getAttribute("data-book")) data-book="` +
