@@ -15,12 +15,52 @@
     <title>Document</title>
 </head>
 <body>
-    <a onclick= renderForm ><i class="far fa-plus-square fa-2x mr-2"></i>Add a new Book</a>
+    <a onclick= renderForm()><i class="far fa-plus-square fa-2x mr-2"></i>Add a new Book</a>
 <div class="container">
 </div>
-<form action="">
-    
-</form>
+<div class="card modal" id="myModal">
+    <div class="modal-content mt-5">
+        <h5 class="card-header amber white-text text-center py-4">
+            <strong>Add a new book</strong>
+            <span class="close">&times;</span>
+        </h5>
+        <div class="card-body px-lg-5">
+            <form class="text-center" style="color: #757575" id="myForm">
+                <div class="form-group text-left mt-3">
+                    <label>Title</label>
+                    <input type="text" class="form-control" value="" id="title_id"
+                        placeholder="Enter book title...">
+                </div>
+                <div class="form-group text-left">
+                    <label>Author</label>
+                    <input type="text" class="form-control" value="" id="author_id"
+                        placeholder="Enter book author...">
+                </div>
+                <div class="form-group text-left">
+                    <label>Pages</label>
+                    <input type="number" class="form-control" id="pages_id"
+                        placeholder="Enter the number of pages...">
+                </div>
+                <label for="materialSubscriptionFormEmail">Have you read the book ?
+                </label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" value="true" name="status" />
+                    <label class="form-check-label" for="materialGroupExample1">YES</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" value="false" name="status" />
+                    <label class="form-check-label" for="materialGroupExample2">NO</label>
+                </div>
+                <button onclick="addBookToLibrary()"
+                    class="btn btn-outline-amber btn-rounded btn-block z-depth-0 my-4 waves-effect"
+                    type="submit">
+                    Add
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
 <script src="./scripts/index.js"></script>
+<script src="./scripts/modal.js"></script>
 </body>
 </html>
