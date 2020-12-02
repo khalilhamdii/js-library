@@ -1,9 +1,12 @@
-modal = document.querySelector('#myModal');
+const modal = document.querySelector('#myModal');
 const renderForm = () => {
-    modal.style.display = "block";
-  }
+  modal.style.display = 'block';
+};
 
-close = document.querySelector('.close');
-close.addEventListener('click', function() {
-    modal.style.display = "none";
+const btn = document.getElementById('add-book');
+btn.onclick = renderForm;
+
+const close = document.querySelector('.close');
+close.addEventListener('click', () => {
+  modal.style.display = 'none';
 });
