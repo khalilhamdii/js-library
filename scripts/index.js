@@ -69,9 +69,11 @@ function addBook(obj, index) {
       <p class="card-text">` +
     obj.pages +
     `</p>
-      <p class="card-text">` +
+      <a onclick=toggleRead(this.getAttribute("data-book")) data-book="` +
+      index +
+      `" class="card-text btn btn-success status-btn">` +
     checkBook(obj.status) +
-    `</p>
+    `</a>
     <a onclick= deleteBook(this.getAttribute("data-book")) data-book="` +
     index +
     `" class="btn btn-danger">Delete Book</a>
@@ -86,5 +88,19 @@ let deleteBook = (index) => {
   let book = document.querySelector(`[data-index="${index}"]`);
   book.remove();
 };
+
+let toggleRead = (index) => {
+  let book = document.querySelector(`[data-index="${index}"]`);
+  book = localStorage.getItem(`Book-${index}`)
+  parsedBook = JSON.parse(book)
+  toggle(parsedBook)
+  localStorage[`Book-${index}`] = JSON.stringify(parsedBook)
+  let status_button = document.querySelector(`[data-index="${index}"]`).querySelector(".status-btn")
+  status_button.innerHTML = checkBook(parsedBook.status)
+}
+
+function toggle(obj) {
+  obj.status = !obj.status;
+}
 
 showBooks();
