@@ -18,7 +18,7 @@
 
 ## Live Demo
 
-[Live demo](https://rawcdn.githack.com/NtwaliHeritier/js-library/a540376038707964ceb6a16b75ebce2b60a4d4cd/index.html)
+[Live demo](https://rawcdn.githack.com/NtwaliHeritier/js-library/0665ab123256af17870faaecbb327874fafba5cf/index.html)
 
 ## Screenshot
 
