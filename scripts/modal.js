@@ -1,5 +1,3 @@
-/* eslint-disable (error type) */
-
 const modal = document.querySelector('#myModal');
 const renderForm = () => {
   modal.style.display = 'block';
@@ -12,3 +10,9 @@ const close = document.querySelector('.close');
 close.addEventListener('click', () => {
   modal.style.display = 'none';
 });
+
+window.onclick = (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
