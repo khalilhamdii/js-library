@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/index.css">
+    <title>Book Library</title>
+</head>
+
+<body>
+    <div class="container p-2">
+        <a class="btn btn-primary rounded-pill" id="add-book">Add a new Book</a>
+        <div class="container-fluid row p-2">
+        </div>
+        <div class="card modal" id="myModal">
+            <div class="modal-content mt-5">
+                <h5 class="card-header amber white-text text-center py-4">
+                    <strong>Add a new book</strong>
+                    <span class="close">&times;</span>
+                </h5>
+                <div class="card-body px-lg-5">
+                    <div class="errors"></div>
+                    <form class="text-center" style="color: #757575" id="myForm">
+                        <div class="form-group text-left mt-3">
+                            <label>Title</label>
+                            <input type="text" class="form-control" value="" id="title_id"
+                                placeholder="Enter book title...">
+                        </div>
+                        <div class="form-group text-left">
+                            <label>Author</label>
+                            <input type="text" class="form-control" value="" id="author_id"
+                                placeholder="Enter book author...">
+                        </div>
+                        <div class="form-group text-left">
+                            <label>Pages</label>
+                            <input type="number" class="form-control" id="pages_id"
+                                placeholder="Enter the number of pages...">
+                        </div>
+                        <label for="materialSubscriptionFormEmail">Have you read the book ?
+                        </label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" value="true" name="status" />
+                            <label class="form-check-label" for="materialGroupExample1">YES</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" value="false" name="status" checked />
+                            <label class="form-check-label" for="materialGroupExample2">NO</label>
+                        </div>
+                        <button onclick="addBookToLibrary()"
+                            class="btn btn-outline-amber btn-rounded btn-block z-depth-0 my-4 waves-effect"
+                            type="button">
+                            Add
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/modal.js"></script>
+</body>
+
+</html>
